@@ -42,11 +42,10 @@
                             $fname=$_POST["fname"];
                             $lname=$_POST["lname"];
                             $email=$_POST["email"];
-                            $pnumber=$_POST["phone"];
-                          
+                            $phone=$_POST["phone"];                          
                             $pwd=$_POST["pwd"];
                             $cpwd=$_POST["cpwd"];
-
+                            
                             if($pwd!=$cpwd){
                                 echo"<p style='color:red;'>";
                                 echo"password missmatch";
@@ -61,7 +60,7 @@
                                     echo"</p>";
                                 }else{
                                     $pwd=md5($pwd);
-                                    $sql2="INSERT INTO `members`(`fname`, `lname`, `email`, `phone`,`pwd`) 
+                                    $sql2="INSERT INTO `users`(`fname`, `lname`, `email`, `phone`,`pwd`) 
                                     VALUES ('$fname','$lname','$email','$phone','$pwd')";
                                   
                                     $result=mysqli_query($conn,$sql2);
